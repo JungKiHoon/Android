@@ -30,4 +30,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         setResult(RESULT_OK, intent);
         finish();
     }
+
+    public void moveThirdActivity(View view) {
+        startActivity(new Intent(this, ThirdActivity.class));
+    }
 }

@@ -13,4 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="결과 전달"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ThirdActivity로 이동"
+        android:onClick="moveThirdActivity"/>
 </LinearLayout>
