@@ -10,7 +10,7 @@
         android:orientation="horizontal">
 
     <EditText
-        android:id="@+id/adress_edit"
+        android:id="@+id/address_edit"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
