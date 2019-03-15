@@ -18,22 +18,21 @@ public class AdapterViewExam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adapter_view_exam);
-        // 데이터 생성
-        ArrayList<String> data = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            data.add("data " + i);
-        }
-        // 어댑터 생성
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
-        // 뷰에 어댑터 연결
+
+        ArrayList<Weather> data = new ArrayList<>();
+        data.add(new Weather("수원", "25도", "맑음"));
+        data.add(new Weather("서울", "27도", "비"));
+        data.add(new Weather("대구", "30도", "흐림"));
+        data.add(new Weather("부천", "29도", "맑음"));
+        data.add(new Weather("부산", "32도", "흐림"));
+        data.add(new Weather("전주", "28도", "비"));
+        data.add(new Weather("인천", "27도", "흐림"));
+        data.add(new Weather("안양", "28도", "맑음"));
+        data.add(new Weather("천안", "29도", "맑음"));
+        // 어댑터
+        MyFirstAdapter adapter = new MyFirstAdapter(data);
+        // 뷰
         ListView listView = findViewById(R.id.list_view);
         listView.setAdapter(adapter);
-        // 아이템 클릭 이벤트 처리
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(AdapterViewExam.this, position + "번째 아이템 선택", LENGTH_SHORT).show();
-            }
-        });
     }
 }

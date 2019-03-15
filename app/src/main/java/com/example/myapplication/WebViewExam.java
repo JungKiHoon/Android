@@ -29,6 +29,10 @@ public class WebViewExam extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-
+        String address = mAddressEdit.getText().toString();
+        if (address.startsWith("http://") == false) {
+            address = "http://" + address;
+        }
+        myWebView.loadUrl(address);
     }
 }
