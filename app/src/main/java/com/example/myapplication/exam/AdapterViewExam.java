@@ -1,16 +1,13 @@
-package com.example.myapplication;
+package com.example.myapplication.exam;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.myapplication.Models.Weather;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
-
-import static android.widget.Toast.*;
 
 public class AdapterViewExam extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.exam;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.myapplication.Models.CardItem;
+import com.example.myapplication.R;
 
 import java.util.List;
 
@@ -64,6 +67,19 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public int getItemCount() {
         return mDataList.size();
+    }
+
+    public void removeItem(int position) {
+        mDataList.remove(position);
+        notifyItemRemoved(position);
+        // size()는 list 인자의 개수를 반환해주는 메소드
+        notifyItemRangeChanged(position, mDataList.size());
+    }
+
+    public void addItem(int position, CardItem item) {
+        mDataList.add(position, item);
+        notifyItemInserted(position);
+        notifyItemRangeChanged(position, mDataList.size());
     }
 
     // 각각의 아이템의 레퍼런스를 저장할 뷰 홀더 클래스

@@ -1,13 +1,15 @@
-package com.example.myapplication;
+package com.example.myapplication.exam;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.myapplication.R;
 
 public class WebViewExam extends AppCompatActivity {
 

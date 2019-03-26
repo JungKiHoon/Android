@@ -1,6 +1,7 @@
-package com.example.myapplication;
+package com.example.myapplication.exam;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -73,5 +76,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void dialPhone(View view) {
+        EditText editText = findViewById(R.id.phone_number_edit);
+        dialPhoneNumber(editText.getText().toString());
+    }
+
+    public void dialPhoneNumber(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+
+        if(intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 }

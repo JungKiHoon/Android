@@ -28,4 +28,21 @@
         android:layout_height="wrap_content"
         android:text="SecondActivity로 이동"
         android:onClick="moveSecondActivity"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/phone_number_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="전화번호를 입력해 주세요"
+            android:inputType="phone"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="dialPhone"
+            android:text="전화걸기"/>
+    </LinearLayout>
 </LinearLayout>

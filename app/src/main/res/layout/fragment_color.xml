@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_adapter_view_exam"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".exam.AdapterViewExam">
+    tools:context=".exam.ColorFragment">
 
-    <ListView
-        android:id="@+id/list_view"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/hello_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_weather"></ListView>
+        android:text="@string/hello_blank_fragment" />
 
 </LinearLayout>
