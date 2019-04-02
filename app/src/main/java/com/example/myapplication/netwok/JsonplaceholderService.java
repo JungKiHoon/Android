@@ -10,4 +10,6 @@ public interface JsonplaceholderService {
     @GET("photos")
     // Call에다 결과 값 타입을 정해줌. 이것을 호출할 때 쓰는 메소드 이름
     Call<List<Photo>> listPhotos();
+    @GET("users")
+    Call<List<User>> listUser();
 }

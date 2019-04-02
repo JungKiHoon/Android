@@ -9,13 +9,19 @@ import android.widget.TextView;
 
 import com.example.myapplication.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NetworkRecyclerAdapter extends RecyclerView.Adapter<NetworkRecyclerAdapter.ViewHolder>{
-    private final List<User> mDataList;
+    private  List<User> mItems = new ArrayList<User>();
+    private NetworkRecyclerClickListener mListener;
 
-    public NetworkRecyclerAdapter(List<User> mDataList) {
-        this.mDataList = mDataList;
+    public void setmItems(List<User> items) {
+        mItems = items;
+    }
+
+    public void setOnClickListener(NetworkRecyclerClickListener listener) {
+        mListener = listener;
     }
 
     @NonNull
@@ -27,14 +33,22 @@ public class NetworkRecyclerAdapter extends RecyclerView.Adapter<NetworkRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        User item = mDataList.get(i);
+        User item = mItems.get(i);
         viewHolder.name.setText(item.getName());
         viewHolder.id.setText(item.getId());
+        if(mListener != null) {
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onItemClicked(viewHolder.getAdapterPosition());
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        return mItems.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -46,5 +60,8 @@ public class NetworkRecyclerAdapter extends RecyclerView.Adapter<NetworkRecycler
             name = itemView.findViewById(R.id.user_name);
             id = itemView.findViewById(R.id.user_id);
         }
+    }
+    public interface NetworkRecyclerClickListener {
+        void onItemClicked(int position);
     }
 }
